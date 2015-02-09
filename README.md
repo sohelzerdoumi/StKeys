@@ -5,9 +5,13 @@ Crack WEP/WPA from Thomson routers. Work on SpeedTouch, Infinitum, BBox, Thomson
 >mvn assembly:assembly
 
 # Usage
-> java -jar StKeys.jar <ssid>
+```sh
+java -jar StKeys.jar <ssid>
+```
 
 Or
 
-> chmod +x StKeys.jar
-> ./StKeys.jar <ssid>
+```sh
+chmod +x StKeys.jar
+./StKeys.jar <ssid>
+```

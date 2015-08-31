@@ -15,8 +15,8 @@ public class SqliteManager {
             SqliteManager.statement = SqliteManager.connection.createStatement();
             SqliteManager.statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
-            statement.executeUpdate("drop table if exists wireless");
-            statement.executeUpdate("create table wireless (id integer PRIMARY KEY, serial string, hash string)");
+            statement.executeUpdate("drop table if exists wirelesses");
+            statement.executeUpdate("create table wirelesses (id integer PRIMARY KEY, serial string, hash_serial string)");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -52,7 +52,7 @@ public class SqliteManager {
 
     public static void insertWireless(String serial, String hash) {
         try {
-            String query = "insert into wireless values(NULL, '%s', '%s')";
+            String query = "insert into wirelesses values(NULL, '%s', '%s')";
             SqliteManager.statement.execute(String.format(query, serial, hash));
         } catch (SQLException e) {
             e.printStackTrace();

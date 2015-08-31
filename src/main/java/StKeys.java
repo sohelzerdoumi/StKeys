@@ -19,6 +19,27 @@ public class StKeys {
         }
     }
 
+    public void saveToDatabase() {
+        this.prepare();
+
+        String tmpHash;
+        String tmpSerial;
+        SqliteManager.connect();
+        SqliteManager.beginTransaction();
+        for (String year : this.years) {
+            for (String week : this.weeks) {
+                for (String endString : this.endString) {
+                    tmpSerial = "CP" + year + week + endString;
+                    tmpHash = toSha1(tmpSerial);
+
+                    SqliteManager.insertWireless(tmpSerial, tmpHash);
+                }
+            }
+        }
+        SqliteManager.endTransaction();
+        SqliteManager.close();
+    }
+
     public Collection<String> crack(String ssid) {
         this.prepare();
 

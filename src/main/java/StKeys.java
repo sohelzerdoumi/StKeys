@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * @author Sohel Zerdoumi <sohel.zerdoumi@gmail.com>
  * @since 07/02/15.
  */
 public class StKeys {
